@@ -11,6 +11,8 @@ button.addEventListener("click", function() {
         body.style.color = "white";
         container.style.backgroundColor = "#1e1e1e";
         button.textContent = "Switch to Light";
+        localStorage.setItem("mode", "dark");
+        
         
     } else {
         title.textContent = "LIGHT MODE";
@@ -18,6 +20,18 @@ button.addEventListener("click", function() {
         body.style.color = "black";
         container.style.backgroundColor = "white";
         button.textContent = "Switch to Dark";
+        localStorage.setItem("mode", "light");
+
     }
-    
 });
+
+if (localStorage.getItem("mode") === "dark") {
+    body.style.backgroundColor = "#121212";
+    body.style.color = "white";
+    container.style.backgroundColor = "#1e1e1e";
+    title.textContent = "DARK MODE";
+    button.textContent = "Switch to Light";
+}
+
+
+
